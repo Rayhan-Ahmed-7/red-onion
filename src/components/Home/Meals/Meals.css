@@ -1,0 +1,13 @@
+.meal-link.active{
+    position: relative;
+}
+.meal-link.active::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 4px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: rgb(244,63,94);
+}
