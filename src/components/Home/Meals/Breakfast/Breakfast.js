@@ -7,7 +7,7 @@ const Breakfast = () => {
     const breakfast = allMeals.filter(meal=>meal.chategory==='breakfast');
     return (
         <>
-            {breakfast.map(meal =><Meal key={meal.id} meal={meal}></Meal>)}
+            {breakfast.map(meal =><Meal key={meal._id} meal={meal}></Meal>)}
         </>
     );
 };

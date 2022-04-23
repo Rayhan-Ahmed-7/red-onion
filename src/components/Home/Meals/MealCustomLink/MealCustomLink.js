@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 
 const MealCustomLink = ({children,to,...props}) => {
-    console.log(props);
     const resolved = useResolvedPath(to);
     const match = useMatch({path:resolved.pathname});
     return (

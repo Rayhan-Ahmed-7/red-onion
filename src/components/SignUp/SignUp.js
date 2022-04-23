@@ -7,13 +7,13 @@ const SignUp = () => {
     const navigate = useNavigate();
     const [
         createUserWithEmailAndPassword,
-        cUser,
+        user,
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const [pageError, setPageError] = useState('');
-    const [user] = useAuthState(auth);
+    //const [user] = useAuthState(auth);
     const handleSubmit = async (e) => {
         e.preventDefault();
         const name = e.target.name.value;
@@ -26,10 +26,9 @@ const SignUp = () => {
         } else {
             setPageError("confirm password isn't matching");
         }
-        console.log(user);
-        if (user) {
-            navigate('/');
-        }
+    }
+    if (user) {
+        navigate('/');
     }
     return (
         <div className='grid place-items-center min-h-[500px]'>
@@ -44,7 +43,7 @@ const SignUp = () => {
                     <input className='p-2 outline-none bg-slate-200 my-4 w-full rounded-md block' type="password" name="confirm_password" placeholder='confirm Password' required />
                     <p className='text-rose-600'>{error?.message}</p>
                     <p className='text-rose-600'>{pageError}</p>
-                    <button className='p-2 flex items-center justify-center outline-none bg-rose-600 text-white cursor-pointer my-4 w-full rounded-md block' type="submit">
+                    <button className='p-2 flex items-center justify-center outline-none bg-rose-600 text-white cursor-pointer my-4 w-full rounded-md' type="submit">
                         <div className={loading?"border-t-2 border-r-2 border-white rounded-full animate-spin h-6 w-6 mr-3":''}></div>
                         <p>Sign Up</p>
                     </button>

@@ -9,9 +9,9 @@ import { signOut } from 'firebase/auth';
 const Header = () => {
     const navigate = useNavigate();
     const [user] = useAuthState(auth);
-    console.log(user);
-    const handleSignOut = ()=>{
+    const handleSignOut = () => {
         signOut(auth);
+        navigate('/');
     }
     return (
         <header className='bg-white shadow-md'>
@@ -22,22 +22,25 @@ const Header = () => {
                 <div className='flex items-center space-x-6 text-lg'>
                     <ul className='flex items-center space-x-6'>
                         <CustomLink to='/'>Home</CustomLink>
-                        <CustomLink to='/cart'><AiOutlineShoppingCart className='text-2xl'/></CustomLink>
+                        <CustomLink to='/cart'><AiOutlineShoppingCart className='text-2xl' /></CustomLink>
                         {
-                            user?
-                            ''
-                            :
-                            <CustomLink to='/login'>Login</CustomLink>
+                            user ?
+                                <>
+                                    <CustomLink to='add-meal'>Add Meal</CustomLink>
+                                    <CustomLink to='manage-meals'>Manage Meals</CustomLink>
+                                </>
+                                :
+                                <CustomLink to='/login'>Login</CustomLink>
                         }
                     </ul>
-                    {user?
-                    <div className='flex items-center space-x-4'>
-                        <h2>{user.displayName}</h2>
-                        {/* <img src={user?.photoURL} alt="" /> */}
-                        <button onClick={()=>handleSignOut()} className='bg-rose-500 px-3 py-2 rounded-3xl text-white'>Sign Out</button>
-                    </div>
-                    :
-                    <button onClick={()=>navigate('/signup')} className='bg-rose-500 px-3 py-2 rounded-3xl text-white'>Sign Up</button>
+                    {user ?
+                        <div className='flex items-center space-x-4'>
+                            <h2>{user.displayName}</h2>
+                            <img src={user.photoURL} alt="" />
+                            <button onClick={() => handleSignOut()} className='bg-rose-500 px-3 py-2 rounded-3xl text-white'>Sign Out</button>
+                        </div>
+                        :
+                        <button onClick={() => navigate('/signup')} className='bg-rose-500 px-3 py-2 rounded-3xl text-white'>Sign Up</button>
                     }
                 </div>
             </nav>
