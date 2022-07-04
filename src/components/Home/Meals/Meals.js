@@ -7,7 +7,7 @@ const Meals = () => {
     return (
         <div className='w-10/12 my-20 mx-auto'>
             <div className='flex justify-center space-x-8 text-lg font-medium text-gray-900'>
-                <MealCustomLink to='breakfast'>Breakfast</MealCustomLink>
+                <MealCustomLink to={'breakfast'}>Breakfast</MealCustomLink>
                 <MealCustomLink to='lunch'>Lunch</MealCustomLink>
                 <MealCustomLink to='dinner'>Dinner</MealCustomLink>
             </div>
