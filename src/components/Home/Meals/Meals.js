@@ -11,7 +11,7 @@ const Meals = () => {
                 <MealCustomLink to='lunch'>Lunch</MealCustomLink>
                 <MealCustomLink to='dinner'>Dinner</MealCustomLink>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-16'>
                 <Outlet></Outlet>
             </div>
             <button className='bg-rose-500 p-2 text-white rounded-md block mx-auto mt-4'>Checkout Your Food</button>
