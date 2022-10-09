@@ -2,9 +2,9 @@ import React from 'react';
 import logo from '../../images/logo.png';
 const Footer = () => {
     return (
-        <footer className='bg-[#120e0e] py-8'>
-            <div className='w-10/12 mx-auto grid lg:grid-cols-4 grid-cols-1 place-content-between'>
-                <div className="logo col-span-2">
+        <footer className='bg-[#120e0e] py-8 font-thin'>
+            <div className='w-10/12 mx-auto grid gap-4 lg:grid-cols-4 grid-cols-1 place-content-between'>
+                <div className="logo lg:col-span-2 col-span-1">
                     <img className='w-40' src={logo} alt="" />
                 </div>
                 <ul className="text-white lg:place-self-end">
@@ -20,13 +20,13 @@ const Footer = () => {
                     <li><a href=''>Restaurants near me</a></li>
                 </ul>
             </div>
-            <div className='w-10/12 mx-auto flex justify-between mt-6'>
-                <p className='text-gray-500'>coliyright&copy; 2022 Red Onion</p>
-                <ul className='flex space-x-6 text-white'>
+            <div className='w-10/12 mx-auto flex md:flex-row flex-col justify-center mt-6'>
+                <ul className='flex md:flex-row flex-col gap-2 text-white'>
                     <li><a href="">Privacy Policy</a></li>
                     <li><a href="">Terms of Use</a></li>
                     <li><a href="">Pricing</a></li>
                 </ul>
+                <p className='text-gray-500 text-center'>coliyright&copy; 2022 Red Onion</p>
             </div>
         </footer>
     );

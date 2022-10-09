@@ -4,7 +4,7 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 const Meal = ({meal}) => {
     const {mealName,img,price,mealInfo} = meal;
     return (
-        <div className='p-10'>
+        <div className='flex items-center justify-between flex-col p-10'>
             <div className='bg-white p-6 text-center hover:shadow-2xl transition duration-300 rounded-lg relative'>
             <img className='w-52 mx-auto' src={img} alt="" />
             <h2 className='text-xl mt-2 text-gray-900'>{mealName}</h2>

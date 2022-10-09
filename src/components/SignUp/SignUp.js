@@ -31,7 +31,7 @@ const SignUp = () => {
         navigate('/');
     }
     return (
-        <div className='grid place-items-center min-h-[500px]'>
+        <div className='grid place-items-center h-[80vh]'>
             <div className='w-72'>
                 <div className="logo mb-8">
                     <img className='w-48 mx-auto' src={logo} alt="" />

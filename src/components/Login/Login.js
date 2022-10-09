@@ -24,7 +24,7 @@ const Login = () => {
     }
 
     return (
-        <div className='grid place-items-center h-[70vh]'>
+        <div className='grid place-items-center h-[80vh]'>
             <div className='w-72'>
                 <div className="logo mb-8">
                     <img className='w-48 mx-auto' src={logo} alt="" />

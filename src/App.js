@@ -12,16 +12,19 @@ import Lunch from './components/Home/Meals/Lunch/Lunch';
 import Dinner from './components/Home/Meals/Dinner/Dinner';
 import NotFound from './components/NotFound/NotFound';
 import useFetch from './Hooks/useFetch';
+import useMeals from './Hooks/useMeals';
 import AddMeals from './components/AddMeals/AddMeals';
 import ManageMeals from './components/ManageMeals/ManageMeals';
 export const Context = createContext();
 function App() {
   //const [meals] = useMeals();
   const [value,setValue] = useState(false);
-  const [meals,setMeals] = useFetch('http://localhost:5000/meals',value);
+  // const [meals,setMeals] = useFetch('http://localhost:5000/meals',value);
+  const [data] = useMeals();
   return (
+    
     <div className="App">
-      <Context.Provider value={meals}>
+      <Context.Provider value={data}>
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}>
