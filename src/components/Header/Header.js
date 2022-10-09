@@ -21,10 +21,10 @@ const Header = () => {
                 <Link to='/' className="logo">
                     <img className='h-10' src={logo} alt="" />
                 </Link>
-                <div onClick={() => setOpen(!open)} className='menu text-rose-500 text-2xl visible md:hidden'>
+                <div onClick={() => setOpen(!open)} className='menu text-rose-500 text-2xl md:hidden visible'>
                     <FaHamburger />
                 </div>
-                <div className={`${open ? 'visible' : 'hidden'} md:static absolute top-[85px] right-0 bg-white p-3 rounded-lg md:shadow-none shadow-lg`}>
+                <div className={` ${open ? 'block' : 'md:block hidden'} md:static absolute top-[85px] right-0 bg-white p-3 rounded-lg md:shadow-none shadow-lg`}>
                     <div className='flex md:flex-row items-center md:space-x-6 md:space-y-0 space-y-6 text-lg flex-col'>
                         <ul className='flex md:flex-row items-center justify-center space-x-0 md:space-x-6 md:space-y-0 space-y-2 flex-col'>
                             <CustomLink to='/'>Home</CustomLink>
