@@ -41,7 +41,7 @@ const Header = () => {
                         </ul>
                         {user ?
                             <div className='flex md:flex-row flex-col items-center space-x-0 md:space-x-4'>
-                                <h2>{user.displayName}</h2>
+                                <h2 className='text-green-500'>{user.displayName}</h2>
                                 <img src={user.photoURL} alt="" />
                                 <button onClick={() => handleSignOut()} className='bg-rose-500 px-3 py-2 rounded-3xl text-white'>Sign Out</button>
                             </div>
